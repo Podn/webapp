@@ -1,3 +1,43 @@
 // Place all the styles related to the Main controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.main-header-banner {
+    align-items: center;
+    background-color: #28507F;
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 24px;
+
+
+    .business-name {
+        align-items: center;
+        display: flex;
+
+    }
+
+    .logo {
+        color: #FFF;
+        margin-right: 12px
+    }
+    
+    .title {
+        color: #FFF;
+        font-size: 24px;
+    }
+
+    .link-container {
+        a {
+            color: #FFF;
+            padding: 12px;
+            text-decoration: none;
+        }
+
+        a:hover {
+            background: rgba(255,255,255,0.1);
+        }
+
+        a.active {
+            color: #9B9B9B;
+        }
+    }
+}
