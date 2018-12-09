@@ -1,12 +1,24 @@
 // Place all the styles related to the Main controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+body {
+    background-color: #F4F6F8;
+    min-width: 450px;
+}
+
+.non-styled-link {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    text-decoration: none;    
+}
+
 .main-header-banner {
     align-items: center;
     background-color: #28507F;
     display: flex;
     justify-content: space-between;
-    padding: 12px 24px;
+    padding: 24px;
 
 
     .business-name {
@@ -28,7 +40,7 @@
     .link-container {
         a {
             color: #FFF;
-            padding: 12px;
+            padding: 18px;
             text-decoration: none;
         }
 
@@ -41,3 +53,177 @@
         }
     }
 }
+
+.main-content-container {    
+    .section {
+        display: flex;
+        justify-content: center;
+        padding: 24px 48px;
+        text-align: center;
+    }
+
+    .hero-content {
+        max-width: 650px;
+    }
+
+    .emphasis {
+        text-decoration: underline;
+    }
+
+    .gradient-background {
+        display: block;
+
+        background: #19f7dd; /* Old browsers */
+        background: -moz-linear-gradient(left, #19f7dd 0%, #0a7494 100%); /* FF3.6-15 */
+        background: -webkit-linear-gradient(left, #19f7dd 0%,#0a7494 100%); /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(to right, #19f7dd 0%,#0a7494 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#19f7dd', endColorstr='#0a7494',GradientType=1 ); /* IE6-9 */
+
+        h2 {
+            color: #FFF;
+        }
+
+        .horizontal-divider{
+            border-bottom: 1px rgba(255,255,255, 0.8) solid;
+            margin: auto;
+            width: 100px;
+        }
+    }
+
+    .video-description-contianer {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        @media screen and (max-width: 1000px) {
+            justify-content: center;                  
+        }
+
+        .description-container {
+            @media screen and (min-width: 1000px) {
+                width: calc(100% - 550px)
+            }
+        }
+
+
+
+        .video-container,
+        .description-container {
+            color: #FFF;
+            margin: 18px 12px;
+            
+            .description-text-container {
+                background: rgba(0, 0, 0, 0.1);
+                padding: 8px;
+            } 
+
+            button.get-going-button {
+                align-items: center;
+                background-color: #FFF;
+                box-shadow: 0 0 2px rgba(0,0,0,0.54);
+                color: #66CCFF;
+                display: flex;
+                font-size: 16px;
+                height: 50px;
+                margin: 12px auto;
+                text-transform: none;
+            }
+
+            button.get-going-button:hover {
+                background-color: #DDD;
+            }
+        }
+
+
+        .video-container {
+            display: flex;
+
+            .video-player {
+                align-items: center;
+                background-color: #7F7F7F;
+                display: flex;
+                justify-content: center;
+                height: 320px;
+                width: 480px;       
+
+                i {
+                    font-size: 72px;
+                    text-shadow: none;
+                }         
+            }
+        }
+    }
+
+    .description-section {
+        display: flex;
+        font-size: 16px;
+        margin: 24px;
+        text-align: left;
+
+        h3 {
+            font-size: 28px;
+            line-height: 1.1em;
+            margin: 0;
+        }
+
+        i {
+            font-size: 32px;
+            margin-right: 8px;
+           text-shadow: none;
+        }
+    }
+
+    h1 {
+        color: rgba(0,0,0,0.87);
+        font-size: 40px;
+
+    }
+
+    h2 {
+        color: #6A7C92;
+        font-size: 30px;
+    }
+
+    button.create-podcast-button {
+            align-items: center;
+            background-color: #66ccFF;
+            box-shadow: 0 0 2px rgba(0,0,0,0.54);
+            color: #FFF;
+            display: flex;
+            height: 50px;
+            margin: auto;
+    }
+    button.create-podcast-button:hover {
+        background-color: #51C0F5;
+    }
+}
+
+.footer {
+    a {
+        color: #6A7C92;
+        text-decoration: none;
+    }
+
+    ul {
+        list-style-type: none;
+        min-width: 250px;
+    }
+
+    ul li:first-child {
+        font-size: 18px;
+    }
+
+    .footer-columns {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+
+    .copyright-text {
+        color: #6A7C92;
+        font-size: 14px;
+        text-align: center;
+        margin-bottom: 12px;
+    }
+}
+

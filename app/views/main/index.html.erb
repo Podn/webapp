@@ -1,28 +1,55 @@
 <%= render "shared/header_banner" %>
 
-<h1>Main#index</h1>
-<p>Find me in app/views/main/index.html.erb</p>
-
-
-
-<div class="demo-card-wide mdl-card mdl-shadow--2dp">
-  <div class="mdl-card__title">
-    <h2 class="mdl-card__title-text">Welcome</h2>
+<div class="main-content-container">
+  <div class="section">
+    <div class="hero-content">
+      <h1>The easiest way to create a podcast for your business</h1>
+      <h2>A concierge for delievering high quality podcasts</h2>
+      <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored create-podcast-button">
+        <div>Create Your Podcast</div>
+      </button>
+    </div>
   </div>
-  <div class="mdl-card__supporting-text">
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-    Mauris sagittis pellentesque lacus eleifend lacinia...
+  <div class="section gradient-background">
+    <h2>A simple process from record to launch</h2>
+    <div class="horizontal-divider"></div>
+    <div class="video-description-contianer">
+      <div class="video-container">
+        <div class="video-player">
+          <i class="material-icons">play_arrow</i>
+        </div>
+      </div>
+      <div class="description-container">
+        <div class="description-text-container">
+          <div class="description-section">
+            <i class="material-icons">check_circle_outline</i>
+            <div><h3>Give us your audio files</h3><div>We'll need your raw audio and some information about what you want</div></div>
+          </div>
+          <div class="description-section">
+            <i class="material-icons">check_circle_outline</i>
+            <div><h3>We handle everything</h3><div>After you edit a provided transcript of your podcast, we handle editing, audio mastering, all the 'ahs' and 'ums', audio quality and even distribution.</div></div>
+          </div>
+          <div class="description-section">
+            <i class="material-icons">check_circle_outline</i>
+            <div><h3>Publish your finished podcast to your audience</h3><div>Once you've approved the final version, we'll automatically host, publish, and distribute your podcast.</div></div>
+          </div>
+      </div>
+      <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored get-going-button">
+           <div>Get Going</div>
+          </button>
+    </div>
   </div>
-  <div class="mdl-card__actions mdl-card--border">
-    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-      Get Started
-    </a>
   </div>
-  <div class="mdl-card__menu">
-    <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
-      <i class="material-icons">share</i>
-    </button>
+  <div class="section">
+    <div>
+      <h1>Be the Voice of your Industry</h1>
+      <h2>Focus on your <span class="emphasis">content</span>, not the editing and distribution</h2>
+      <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored create-podcast-button">
+        <div>Create Your Podcast</div>
+      </button>
+    </div>
   </div>
 </div>
+
 
 <%= render "shared/footer" %>
