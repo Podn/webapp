@@ -1,10 +1,13 @@
--- update sign-up form to be functional
+-- update post-signup form
 -- Add what are you working on + what do you need pages
 -- Add welcome to the waitlist page
+-- Add pages for About, How it Works, Legal, Privacy Policy, Terms of Use
+
 -- Setup and move to postgres db
 -- launch to heroku
--- migrate web url
+-- migrate to peakpodcasting.com
 -- Set-up peak podcasting emails
 -- Change all secrete keys and add to .gitignore
 
 -- Add email confirmation for account sign-up
+-- Set-up admin view for db
