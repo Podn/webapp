@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
     def new
-        @user = User.new 
+        redirect_to '/signup'
     end
 
     def create ()
@@ -8,6 +8,10 @@ class UsersController < ApplicationController
         logger.debug user_params
         @user = User.new(user_params)
         user_saved = @user.save
+        if !user_saved
+            redirect_to '/signup', flash: {notice: "Error creating account, please try again."} 
+            return
+        end
         render :json => {saved: user_saved, user: @user} # don't do msg.to_json
     end
 

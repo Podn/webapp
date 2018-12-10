@@ -11,7 +11,10 @@
           <%= text_field_tag(:email, '', placeholder: 'Email Address', class: 'mdl-textfield__input') %>
           <%= password_field_tag(:password, '', placeholder: 'password', class: 'mdl-textfield__input') %>
           <%= password_field_tag(:password_confirmation, '', placeholder: 'password confirmation', class: 'mdl-textfield__input') %>
-          <%= submit_tag("Continue") %>
+          <%= submit_tag("Create Account", class: 'mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored submit-button') %>
+        <% end %>
+        <% flash.each do |key, value| %>
+          <div class="signup-error"><%= value %></div>
         <% end %>
     </div>
     <div class="signup-side-panel">

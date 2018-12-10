@@ -218,6 +218,10 @@ body {
         }
     }
 
+    .login-section {
+        justify-content: center;
+    }
+
     .signup-form {
         padding: 32px;
         width: 436px;
@@ -227,6 +231,28 @@ body {
 
         input.mdl-textfield__input {
             margin-bottom: 24px;
+        }
+
+        input.submit-button {
+            align-items: center;
+            background-color: #FFF;
+            box-shadow: 0 0 2px rgba(0,0,0,0.54);
+            color: #66CCFF;
+            display: flex;
+            font-size: 16px;
+            height: 50px;
+            margin: 12px auto;
+            text-transform: none;
+        }
+
+        input.submit-button:hover {
+            background-color: #DDD;
+        }
+
+        .signup-error {
+            border: 1px solid rgba(255,0,0,0.54);
+            margin: 4px;
+            padding: 4px;
         }
     }
 
