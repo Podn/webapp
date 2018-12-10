@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :users
   get 'main/index'
   get '/signup', to: 'main#signup', as: :signup
   root 'main#index'

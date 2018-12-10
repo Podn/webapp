@@ -1,5 +1,22 @@
 <%= render "shared/header_banner" %>
-<div>TODO(dgriff): add this</div>
+<div class="signup-container">
+<h1>Be the voice of your industry</h1>
+<h2>Finalize your account to get your podcast mastered</h2>
 
-
-<%= render "shared/footer" %>
+<div class="signup-section">
+    <div class="signup-form">
+        <%= form_for(:user, :url => {:controller => 'users', :action => 'create'}) do %>
+          <%= text_field_tag(:first_name, '', placeholder: 'First Name', class: 'mdl-textfield__input') %>
+          <%= text_field_tag(:last_name, '', placeholder: 'Last Name', class: 'mdl-textfield__input') %>
+          <%= text_field_tag(:email, '', placeholder: 'Email Address', class: 'mdl-textfield__input') %>
+          <%= password_field_tag(:password, '', placeholder: 'password', class: 'mdl-textfield__input') %>
+          <%= password_field_tag(:password_confirmation, '', placeholder: 'password confirmation', class: 'mdl-textfield__input') %>
+          <%= submit_tag("Continue") %>
+        <% end %>
+    </div>
+    <div class="signup-side-panel">
+        <i class="material-icons">mic</i>
+        <p>Peak Podcasting makes it simple to bring you podcast from the studio to your listeners ears</p>
+    </div>
+</div>
+</div>

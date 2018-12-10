@@ -64,5 +64,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Added by Daniel
 gem 'material_design_lite-rails', '~> 1.3'
-
-
+gem 'bcrypt-ruby', :require => 'bcrypt' 

@@ -1,6 +1,5 @@
-// Place all the styles related to the Main controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+$main-title-color: #6A7C92;
+
 body {
     background-color: #F4F6F8;
     min-width: 450px;
@@ -105,8 +104,6 @@ body {
             }
         }
 
-
-
         .video-container,
         .description-container {
             color: #FFF;
@@ -176,11 +173,10 @@ body {
     h1 {
         color: rgba(0,0,0,0.87);
         font-size: 40px;
-
     }
 
     h2 {
-        color: #6A7C92;
+        color: $main-title-color;
         font-size: 30px;
     }
 
@@ -198,9 +194,65 @@ body {
     }
 }
 
+
+.signup-container {
+    h1 {
+        color: rgba(0,0,0,0.87);
+        font-size: 40px;
+        margin: 24px 0 0 0;
+        text-align: center;
+    }
+
+    h2 {
+        color: $main-title-color;
+        font-size: 30px;
+        margin: 0px 0 30px 0;
+        text-align: center;
+    }
+
+    .signup-section {
+        display: flex;
+        flex-wrap: wrap;
+        @media screen and (max-width: 800px) {
+            justify-content: center;
+        }
+    }
+
+    .signup-form {
+        padding: 32px;
+        width: 436px;
+        @media screen and (max-width: 800px) {
+          order: 2;
+        }
+
+        input.mdl-textfield__input {
+            margin-bottom: 24px;
+        }
+    }
+
+    .signup-side-panel {
+        color: $main-title-color;
+        @media screen and (max-width: 800px) {
+          order: 1;
+        }
+        text-align: center;
+        width: 300px;
+
+        i {
+            font-size: 96px;
+        }
+
+        p {
+            margin: auto;
+            width: 200px;
+        }
+
+    }
+}
+
 .footer {
     a {
-        color: #6A7C92;
+        color: $main-title-color;
         text-decoration: none;
     }
 
@@ -220,7 +272,7 @@ body {
     }
 
     .copyright-text {
-        color: #6A7C92;
+        color: $main-title-color;
         font-size: 14px;
         text-align: center;
         margin-bottom: 12px;
