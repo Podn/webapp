@@ -213,12 +213,6 @@ body {
     .signup-section {
         display: flex;
         flex-wrap: wrap;
-        @media screen and (max-width: 800px) {
-            justify-content: center;
-        }
-    }
-
-    .login-section {
         justify-content: center;
     }
 

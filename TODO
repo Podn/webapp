@@ -2,6 +2,7 @@
 -- Add what are you working on + what do you need pages
 -- Add welcome to the waitlist page
 -- Add pages for About, How it Works, Legal, Privacy Policy, Terms of Use
+-- Point CTAs on home page to /signup
 
 -- Setup and move to postgres db
 -- launch to heroku
