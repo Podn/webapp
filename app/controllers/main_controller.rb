@@ -1,9 +1,12 @@
 class MainController < ApplicationController
-  before_action :authenticate_user, :except => [:index, :login, :login_attempt, :logout, :signup]
+  before_action :authenticate_user, :except => [:index, :how_it_works, :login, :login_attempt, :logout, :signup]
   def index
     logger.warn current_user.to_json
     @current_user = current_user
     logger.warn @current_user.to_json
+  end
+
+  def how_it_works
   end
 
   def signup
