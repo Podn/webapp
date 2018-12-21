@@ -9,7 +9,7 @@ body {
     align-items: center;
     display: flex;
     justify-content: center;
-    text-decoration: none;    
+    text-decoration: none;
 }
 
 .main-header-banner {
@@ -30,7 +30,7 @@ body {
         color: #FFF;
         margin-right: 12px
     }
-    
+
     .title {
         color: #FFF;
         font-size: 24px;
@@ -53,7 +53,7 @@ body {
     }
 }
 
-.main-content-container {    
+.main-content-container {
     .section {
         display: flex;
         justify-content: center;
@@ -95,7 +95,7 @@ body {
         justify-content: space-between;
 
         @media screen and (max-width: 1000px) {
-            justify-content: center;                  
+            justify-content: center;
         }
 
         .description-container {
@@ -108,11 +108,11 @@ body {
         .description-container {
             color: #FFF;
             margin: 18px 12px;
-            
+
             .description-text-container {
                 background: rgba(0, 0, 0, 0.1);
                 padding: 8px;
-            } 
+            }
 
             button.get-going-button {
                 align-items: center;
@@ -141,12 +141,12 @@ body {
                 display: flex;
                 justify-content: center;
                 height: 320px;
-                width: 480px;       
+                width: 480px;
 
                 i {
                     font-size: 72px;
                     text-shadow: none;
-                }         
+                }
             }
         }
     }
@@ -247,6 +247,11 @@ body {
             border: 1px solid rgba(255,0,0,0.54);
             margin: 4px;
             padding: 4px;
+        }
+
+        input:focus {
+            outline: none !important;
+            border: none;
         }
     }
 
