@@ -155,24 +155,11 @@ body {
             align-items: center;
             margin-bottom: 70px;
 
-            .video-player {
-                align-items: center;
-                background-color: #7F7F7F;
-                display: flex;
-                justify-content: center;
-                height: 320px;
-                width: 480px;
-
-                i {
-                    font-size: 72px;
-                    text-shadow: none;
-                }
             .side-panel-mic {
                 font-size: 300px;
                 color: #B4E2E7;
                 text-shadow: -1px -1px rgba(0, 0, 0, 0.54)
             }
-
         }
     }
 
@@ -295,12 +282,13 @@ body {
 
     .signup-side-panel {
         color: $main-title-color;
-        @media screen and (max-width: 800px) {
-          order: 1;
-        }
         text-align: center;
         width: 300px;
 
+        @media screen and (max-width: 800px) {
+          order: 1;
+        }
+        
         i {
             font-size: 96px;
         }
@@ -309,7 +297,6 @@ body {
             margin: auto;
             width: 200px;
         }
-
     }
 }
 
