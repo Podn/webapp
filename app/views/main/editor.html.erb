@@ -1,0 +1,50 @@
+<%= render "shared/header_banner" %>
+
+<div class="main-content-container">
+  <div class="section">
+    <div class="hero-content">
+      <h1>Get consistent work that pays well</h1>
+      <h5>Focus on editing and join a community of audio editors</h5>
+        <%= button_to "Join now", signup_path,
+        :class => "mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored create-podcast-button",
+        :method => :get %>
+    </div>
+  </div>
+  <div class="section gradient-background">
+    <h2>Do what you love and get paid for it.</h2>
+    <div class="horizontal-divider"></div>
+    <div class="video-description-contianer">
+      <div class="video-container">
+        <div class="video-player">
+          <i class="material-icons">play_arrow</i>
+        </div>
+      </div>
+      <div class="description-container">
+        <div class="description-text-container">
+          <div class="description-section">
+            <i class="material-icons">check_circle_outline</i>
+            <div><h3>Apply to be a peak podcasting editor</h3><div>We’ll review your portfolio. If you’re a match, you’ll get access to our jobs.</div></div>
+          </div>
+          <div class="description-section">
+            <i class="material-icons">check_circle_outline</i>
+            <div><h3>Browse client requests</h3><div>We aggregate editing jobs for you and make interfacing with clients simple.</div></div>
+          </div>
+          <div class="description-section">
+            <i class="material-icons">check_circle_outline</i>
+            <div><h3>Get paid fairly for your work</h3><div>We can offer consistent work that pays well.</div></div>
+          </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  <div class="section">
+    <div>
+      <h1>The easiest way to become a full time podcast editor</h1>
+        <%= button_to "Join now", signup_path, :class => "mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored create-podcast-button", :method => :get %>
+      </button>
+    </div>
+  </div>
+</div>
+
+
+<%= render "shared/footer" %>

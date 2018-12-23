@@ -14,7 +14,7 @@ body {
     align-items: center;
     display: flex;
     justify-content: center;
-    text-decoration: none;    
+    text-decoration: none;
 }
 
 .main-header-banner {
@@ -22,8 +22,12 @@ body {
     background-color: #28507F;
     display: flex;
     justify-content: space-between;
-    padding: 24px;
-
+    padding: 10px;
+    padding-right: 30px;
+    position: fixed;
+    width: 100%;
+    z-index: 9999;
+    top: 0;
 
     .business-name {
         align-items: center;
@@ -35,10 +39,10 @@ body {
         color: #FFF;
         margin-right: 12px
     }
-    
+
     .title {
         color: #FFF;
-        font-size: 24px;
+        font-size: 18px;
     }
 
     .link-container {
@@ -61,7 +65,7 @@ body {
     text-decoration: none;
 }
 
-.main-content-container {    
+.main-content-container {
     .section {
         display: flex;
         justify-content: center;
@@ -70,7 +74,12 @@ body {
     }
 
     .hero-content {
-        max-width: 650px;
+        max-width: 750px;
+        padding-top: 40px;
+
+        h5 {
+            padding-bottom: 50px;
+        }
     }
 
     .emphasis {
@@ -115,11 +124,11 @@ body {
         .description-container {
             color: #FFF;
             margin: 18px 12px;
-            
+
             .description-text-container {
                 background: rgba(0, 0, 0, 0.1);
                 padding: 8px;
-            } 
+            }
 
             button.get-going-button {
                 align-items: center;
@@ -146,11 +155,22 @@ body {
             align-items: center;
             margin-bottom: 70px;
 
+            .video-player {
+                align-items: center;
+                background-color: #7F7F7F;
+                display: flex;
+                justify-content: center;
+                height: 320px;
+                width: 480px;
+
+                i {
+                    font-size: 72px;
+                    text-shadow: none;
+                }
             .side-panel-mic {
                 font-size: 300px;
                 color: #B4E2E7;
                 text-shadow: -1px -1px rgba(0, 0, 0, 0.54)
-
             }
 
         }
@@ -177,7 +197,7 @@ body {
 
     h1 {
         color: rgba(0,0,0,0.87);
-        font-size: 40px;
+        font-size: 48px;
         @media only screen and (max-device-width: 800px) {
             font-size: 64px;
         }
@@ -190,24 +210,30 @@ body {
             font-size: 48px;
         }
     }
+     h5 {
+        color: $main-title-color;
+    }
 
-    button.create-podcast-button {
+    .create-podcast-button {
             align-items: center;
-            background-color: #66ccFF;
+            background-color: #62B7ED;
             box-shadow: 0 0 2px rgba(0,0,0,0.54);
-            color: #FFF;
             display: flex;
             height: 50px;
             margin: auto;
     }
-    button.create-podcast-button:hover {
+    .create-podcast-button:hover {
         background-color: #51C0F5;
+    }
+    .mdl-button.mdl-button--colored{
+        color: #FFF;
     }
 }
 
 
 .signup-container {
     h1 {
+        padding-top: 50px;
         color: rgba(0,0,0,0.87);
         font-size: 40px;
         margin: 24px 0 0 0;
@@ -259,6 +285,11 @@ body {
             margin: 4px;
             padding: 4px;
             white-space: pre-wrap;
+        }
+
+        input:focus {
+            outline: none !important;
+            border: none;
         }
     }
 
