@@ -1,13 +1,16 @@
 class MainController < ApplicationController
-  before_action :authenticate_user, :except => [:index, :login, :login_attempt, :logout, :signup]
-  def index
-    logger.warn current_user.to_json
-    @current_user = current_user
-    logger.warn @current_user.to_json
-  end
+  before_action :authenticate_user, :except => [:index, :login, :login_attempt, :logout, :signup, :editor, :apply]
+    def index
+      logger.warn current_user.to_json
+      @current_user = current_user
+      logger.warn @current_user.to_json
+    end
 
-  def signup
-  end
+    def editor
+    end
+
+    def signup
+    end
 
     def login
     end
@@ -20,7 +23,7 @@ class MainController < ApplicationController
 
         else
             flash[:notice] = "Invalid Username or Password"
-            render "login"  
+            render "login"
         end
     end
 
