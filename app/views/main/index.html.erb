@@ -1,3 +1,4 @@
+<div class="blue-background">
 <%= render "shared/header_banner" %>
 
 <div class="main-content-container">
@@ -15,9 +16,7 @@
     <div class="horizontal-divider"></div>
     <div class="video-description-contianer">
       <div class="video-container">
-        <div class="video-player">
-          <i class="material-icons">play_arrow</i>
-        </div>
+          <i class="material-icons side-panel-mic">mic</i>
       </div>
       <div class="description-container">
         <div class="description-text-container">
@@ -39,13 +38,18 @@
   </div>
   <div class="section">
     <div>
-      <h1>Be the Voice of your Industry</h1>
-      <h5>Focus on your <span class="emphasis">content</span>, not the editing and distribution</h5>
-        <%= button_to "Get Started", signup_path, :class => "mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored create-podcast-button", :method => :get %>
-      </button>
+      <h1>Our Services</h1>
+      <%= render "shared/how_it_works", selectable: false %>
+      <a class="button-link" href="/signup">
+        <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored create-podcast-button">
+          <div>Get Started</div>
+        </button>
+      </a>
+      </div>
     </div>
   </div>
 </div>
 
 
 <%= render "shared/footer" %>
+</div>

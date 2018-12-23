@@ -1,0 +1,30 @@
+<%= render "shared/header_banner" %>
+<div class="information-container">
+    <div class="information-page">
+        <div class="information-titles">
+           <h1>How can we help</h1>
+           <h2>Select one or more of the following</h2>
+        </div>
+        <%= render "shared/how_it_works", selectable: true %>
+    </div>
+    <div class="information-page" style="display: none;">
+        <div class="information-titles">
+           <h1>SECOND PAGE</h1>
+           <h2>Another page for the making</h2>
+        </div>
+        <%= render "shared/how_it_works", selectable: true %>
+    </div>
+    <div class="imformation-button-row">
+        <button 
+            style="display: none;"
+            id="information-back"
+            class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored disabled">
+          <div>Back</div>
+        </button>
+        <button 
+            id="information-forward"
+            class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored disabled">
+          <div>Continue</div>
+        </button>
+    </div>
+</div>

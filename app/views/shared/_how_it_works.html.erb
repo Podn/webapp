@@ -1,0 +1,48 @@
+<div class="how-it-works-container">
+    <div class="how-it-works-col <%= selectable ? "selectable" : "" %>" data-name="setup" data-value="setup">
+        <div class="how-it-works-col-title">
+            <h2>Setup</h2>
+            <i class="material-icons">settings</i>
+        </div>
+        <ul>
+            <li>Create your podcast website</li>
+            <li>Write a show description</li>
+            <li>Find music for your podcast</li>
+            <li>Find cover art</li>
+        </ul>
+    </div>
+    <div class="how-it-works-col <%= selectable ? "selectable" : "" %>" data-name="edit" data-value="edit">
+        <div class="how-it-works-col-title">
+            <h2>Edit</h2>
+            <i class="material-icons">edit</i>
+        </div>
+        <ul>
+            <li>Remove the 'ahs' and 'ums' </li>
+            <li>Reduce background noise</li>
+            <li>Master to level volume</li>
+            <li>Add supplied into and outro music</li>
+        </ul>
+    </div>
+    <div class="how-it-works-col <%= selectable ? "selectable" : "" %>" data-name="distribute" data-value="distribute">
+        <div class="how-it-works-col-title">
+            <h2>Distribute</h2>
+            <i class="material-icons">people</i>
+        </div>
+        <ul>
+            <li>Host and distribute your podcast</li>
+            <li>Optimize podcast discoverablility</li>
+            <li>Monthly updates with statistics</li>
+            <li>Write shown notes</li>
+        </ul>
+    </div>
+    <% if selectable %>
+        <div class="how-it-works-col selectable" data-name="other" data-value="other">
+            <div class="how-it-works-col-title">
+                <h2>Other</h2>
+            </div>
+           <ul>
+                <li>We'll ask for more details later</li>
+            </ul>
+        </div>
+    <% end %>
+</div>

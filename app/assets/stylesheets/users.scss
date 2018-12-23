@@ -1,3 +1,25 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+$main-title-color: #6A7C92;
+
+.information-titles {
+    text-align: center;
+    h1 {
+        color: rgba(0,0,0,0.87);
+        font-size: 40px;
+        margin-bottom: 0;
+        @media only screen and (max-device-width: 800px) {
+            font-size: 64px;
+        }
+    }
+
+    h2 {
+        color: $main-title-color;
+        font-size: 30px;
+        margin-top: 0;
+        @media screen and (max-device-width: 800px) {
+            font-size: 48px;
+        }
+    }
+}

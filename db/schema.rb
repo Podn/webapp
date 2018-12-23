@@ -10,7 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_10_003829) do
+ActiveRecord::Schema.define(version: 2018_12_23_203236) do
+
+  create_table "podcast_roles", force: :cascade do |t|
+    t.integer "podcast_id"
+    t.integer "user_ud"
+    t.string "role"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "podcasts", force: :cascade do |t|
+    t.string "title"
+    t.string "description"
+    t.string "cover_art_url"
+    t.string "rss_url"
+    t.string "services"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "first_name"
@@ -20,6 +38,9 @@ ActiveRecord::Schema.define(version: 2018_12_10_003829) do
     t.string "salt"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "admin"
+    t.boolean "waitlisted"
+    t.string "type"
   end
 
 end

@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
     attr_accessor :password
     attr_accessor :password_confirmation
 
-    before_save :encrypt_password
+    before_save :update_before_save
     after_save :clear_password
 
     EMAIL_REGEX = /[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}/i
@@ -28,10 +28,20 @@ class User < ActiveRecord::Base
         encrypted_password == BCrypt::Engine.hash_secret(login_password, salt)
     end
 
+    def update_before_save        
+        if not self.waitlisted.present?
+            self.waitlisted = false
+        end
+        if not self.admin.present?
+            self.admin = false
+        end
+        self.encrypt_password()
+    end
+
     def encrypt_password
       if password.present?
         self.salt = BCrypt::Engine.generate_salt
-        self.encrypted_password= BCrypt::Engine.hash_secret(password, salt)
+        self.encrypted_password = BCrypt::Engine.hash_secret(password, salt)
       end
     end
 
