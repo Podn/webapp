@@ -1,7 +1,5 @@
 class UsersController < ApplicationController
-    def new
-        redirect_to '/signup'
-    end
+    before_action :authenticate_user, :except => [:create]
 
     def create ()
         logger.debug "here"
@@ -12,7 +10,8 @@ class UsersController < ApplicationController
             redirect_to '/signup', flash: {notice: "Error creating account, please try again.\n#{formatErrors(@user.errors.messages)}"} 
             return
         end
-        render :json => {saved: user_saved, user: @user} # don't do msg.to_json
+        session[:user_id] = @user.id
+        redirect_to action: :information
     end
 
     def information

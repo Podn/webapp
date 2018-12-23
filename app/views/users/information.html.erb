@@ -1,17 +1,30 @@
-<div>
-  I 
-    <div class="mdl-textfield mdl-js-textfield getmdl-select">
-        <input type="text" value="" class="mdl-textfield__input" id="sample2" readonly>
-        <label for="sample2" class="mdl-textfield__label">Have/Want</label>
-        <ul for="sample2" class="mdl-menu mdl-menu--bottom-left mdl-js-menu">
-            <li class="mdl-menu__item" data-val="DEU">Have</li>
-            <li class="mdl-menu__item" data-val="BLR">Want</li>
-        </ul>
+<%= render "shared/header_banner" %>
+<div class="information-container">
+    <div class="information-page">
+        <div class="information-titles">
+           <h1>How can we help</h1>
+           <h2>Select one or more of the following</h2>
+        </div>
+        <%= render "shared/how_it_works", selectable: true %>
     </div>
-    a podcast that I typically host with
-    <input type="number" min=1 class="mdl-textfield__input" placeholder="2"/>
-    people
+    <div class="information-page" style="display: none;">
+        <div class="information-titles">
+           <h1>SECOND PAGE</h1>
+           <h2>Another page for the making</h2>
+        </div>
+        <%= render "shared/how_it_works", selectable: true %>
+    </div>
+    <div class="imformation-button-row">
+        <button 
+            style="display: none;"
+            id="information-back"
+            class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored disabled">
+          <div>Back</div>
+        </button>
+        <button 
+            id="information-forward"
+            class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored disabled">
+          <div>Continue</div>
+        </button>
+    </div>
 </div>
-
-
-<%= render "shared/how_it_works", selectable: true %>
