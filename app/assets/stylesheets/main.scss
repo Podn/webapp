@@ -116,13 +116,13 @@ body {
     }
 
     .video-description-contianer {
-        display: flex;        
+        display: flex;
         justify-content: space-between;
         margin-top: 8px;
 
         @media screen and (max-width: 1000px) {
             flex-wrap: wrap;
-            justify-content: center;                  
+            justify-content: center;
         }
 
         .description-container {
@@ -285,7 +285,7 @@ body {
             white-space: pre-wrap;
         }
 
-        input:focus {
+        input:focus, textarea:focus {
             outline: none !important;
             border: none;
         }
@@ -299,7 +299,7 @@ body {
         @media screen and (max-width: 800px) {
           order: 1;
         }
-        
+
         i {
             font-size: 96px;
         }
@@ -364,7 +364,7 @@ body {
 
     .how-it-works-col {
         align-items: center;
-        display: flex;         
+        display: flex;
         flex-direction: column;
         justify-content: center;
         min-width: 260px;
@@ -395,7 +395,7 @@ body {
     }
 
     i {
-        color: $main-title-color; 
+        color: $main-title-color;
         font-size: 48px;
     }
 

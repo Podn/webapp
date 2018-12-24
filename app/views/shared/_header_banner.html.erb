@@ -1,13 +1,13 @@
 <div class="main-header-banner">
     <div class="business-name">
         <a class="non-styled-link" href="/">
-            <div class="logo"><i class="material-icons">whatshot</i></div>
+            <!-- <div class="logo"><i class="material-icons">whatshot</i></div> -->
             <div class="title">Peak Podcasting</div>
         </a>
     </div>
     <div class="link-container">
         <%= link_to "For Businesses", root_path, class: "#{'active' if current_page? root_path}" %>
-        <%= link_to "For Editors", editor_path, class: "#{'active' if current_page? editor_path}" %>
+        <%= link_to "For Podcast Editors", editor_path, class: "#{'active' if current_page? editor_path}" %>
         <% if @current_user %>
             <%= link_to "Logout", logout_path, class: "#{'active' if current_page? logout_path}" %>
         <% else %>
