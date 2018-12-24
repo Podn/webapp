@@ -1,14 +1,12 @@
--- update post-signup form
--- Add what are you working on + what do you need pages
--- Add welcome to the waitlist page
+-- Make mobile friendly
 -- Add pages for About, How it Works, Legal, Privacy Policy, Terms of Use
--- Point CTAs on home page to /signup
+-- Update logo / text / icons
+-- Add favicon
 
 -- Setup and move to postgres db
 -- launch to heroku
+-- setup https (letsencrypt)
 -- migrate to peakpodcasting.com
--- Set-up peak podcasting emails
 -- Change all secrete keys and add to .gitignore
 
--- Add email confirmation for account sign-up
 -- Set-up admin view for db
