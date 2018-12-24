@@ -17,6 +17,17 @@ body {
     text-decoration: none;
 }
 
+.material-icons.green-check {
+    color: #559807;
+    font-size: 300px;
+}
+
+.check-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .main-header-banner {
     align-items: center;
     background-color: #28507F;
@@ -247,7 +258,7 @@ body {
           order: 2;
         }
 
-        input.mdl-textfield__input {
+        .mdl-textfield__input {
             margin-bottom: 24px;
         }
 

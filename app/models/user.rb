@@ -35,6 +35,9 @@ class User < ActiveRecord::Base
         if not self.admin.present?
             self.admin = false
         end
+        if not self.approved.present?
+            self.approved = false
+        end
         self.encrypt_password()
     end
 

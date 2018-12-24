@@ -1,12 +1,11 @@
 class MainController < ApplicationController
   before_action :authenticate_user, :except => [:index, :login, :login_attempt, :logout, :signup, :editor, :apply]
     def index
-      logger.warn current_user.to_json
       @current_user = current_user
-      logger.warn @current_user.to_json
     end
 
     def editor
+        @current_user = current_user
     end
 
     def signup
@@ -19,8 +18,12 @@ class MainController < ApplicationController
         authorized_user = User.authenticate(params[:email],params[:password])
         if authorized_user
             session[:user_id] = authorized_user.id
-            redirect_to(:action => 'index')
-
+            logger.warn authorized_user.to_json
+            if authorized_user.user_type == "editor"
+                redirect_to('/editor/review')
+            else
+                redirect_to(:action => 'index')
+            end
         else
             flash[:notice] = "Invalid Username or Password"
             render "login"

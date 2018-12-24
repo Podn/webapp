@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_23_203236) do
+ActiveRecord::Schema.define(version: 2018_12_24_005514) do
 
   create_table "podcast_roles", force: :cascade do |t|
     t.integer "podcast_id"
@@ -41,6 +41,10 @@ ActiveRecord::Schema.define(version: 2018_12_23_203236) do
     t.boolean "admin"
     t.boolean "waitlisted"
     t.string "type"
+    t.boolean "approved"
+    t.string "user_type"
+    t.string "editing_description"
+    t.string "previous_work"
   end
 
 end
