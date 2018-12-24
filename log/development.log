@@ -9047,3 +9047,1394 @@ Processing by UsersController#editor_review as HTML
 Completed 200 OK in 33ms (Views: 27.3ms | ActiveRecord: 0.2ms)
 
 
+Started GET "/" for 127.0.0.1 at 2018-12-23 17:20:09 -0800
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/daniel/.rvm/gems/ruby-2.5.1/gems/web-console-3.7.0/lib/web_console/middleware.rb:135
+Processing by MainController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4
+  Rendering main/index.html.erb within layouts/application
+  Rendered shared/_header_banner.html.erb (1.3ms)
+  Rendered shared/_how_it_works.html.erb (0.5ms)
+  Rendered shared/_footer.html.erb (0.5ms)
+  Rendered main/index.html.erb within layouts/application (14.2ms)
+Completed 200 OK in 373ms (Views: 333.5ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/logout" for 127.0.0.1 at 2018-12-23 17:20:10 -0800
+Processing by MainController#logout as HTML
+Redirected to http://localhost:3000/login
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2018-12-23 17:20:10 -0800
+Processing by MainController#login as HTML
+  Rendering main/login.html.erb within layouts/application
+  Rendered shared/_header_banner.html.erb (3.5ms)
+  Rendered main/login.html.erb within layouts/application (9.4ms)
+Completed 200 OK in 49ms (Views: 44.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-23 17:20:11 -0800
+Processing by MainController#index as HTML
+  Rendering main/index.html.erb within layouts/application
+  Rendered shared/_header_banner.html.erb (1.9ms)
+  Rendered shared/_how_it_works.html.erb (1.7ms)
+  Rendered shared/_footer.html.erb (0.6ms)
+  Rendered main/index.html.erb within layouts/application (31.1ms)
+Completed 200 OK in 82ms (Views: 79.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2018-12-23 17:20:15 -0800
+Processing by MainController#signup as HTML
+  Rendering main/signup.html.erb within layouts/application
+  Rendered shared/_header_banner.html.erb (1.7ms)
+  Rendered main/signup.html.erb within layouts/application (7.3ms)
+Completed 200 OK in 48ms (Views: 36.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-12-23 19:29:16 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"kO9xZp5ZLRd412/+CQgFQHXjwna7VdnNsuyaNMMgXDCDO1immWk114ZLPhu3vVbaNyuBTWaMrbKwnwovSWQVMw==", "first_name"=>"Daniel", "last_name"=>"Griffin", "email"=>"asdfdgdfg@xcxv.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "commit"=>"Create Account"}
+Unpermitted parameters: :utf8, :authenticity_token, :commit
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:7
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "asdfdgdfg@xcxv.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7
+  [1m[36mUser Create (3.2ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "encrypted_password", "salt", "created_at", "updated_at", "admin", "waitlisted", "approved", "user_type") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Daniel"], ["last_name", "Griffin"], ["email", "asdfdgdfg@xcxv.com"], ["encrypted_password", "$2a$10$7yxEYPIj115mwk.S0zx4W.eZBCJBH6T3SFUWciHmgwZrVeNvfHcHa"], ["salt", "$2a$10$7yxEYPIj115mwk.S0zx4W."], ["created_at", "2018-12-24 03:29:16.607180"], ["updated_at", "2018-12-24 03:29:16.607180"], ["admin", 0], ["waitlisted", 0], ["approved", 0], ["user_type", "business"]]
+  ↳ app/controllers/users_controller.rb:7
+  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:7
+Redirected to http://localhost:3000/signup/information
+Completed 302 Found in 96ms (ActiveRecord: 6.0ms)
+
+
+Started GET "/signup/information" for 127.0.0.1 at 2018-12-23 19:29:16 -0800
+Processing by UsersController#information as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17
+  Rendering users/information.html.erb within layouts/application
+  Rendered shared/_header_banner.html.erb (1.3ms)
+  Rendered shared/_how_it_works.html.erb (0.7ms)
+  Rendered shared/_how_it_works.html.erb (0.0ms)
+  Rendered users/information.html.erb within layouts/application (15.3ms)
+Completed 200 OK in 368ms (Views: 361.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/signup/information" for 127.0.0.1 at 2018-12-23 19:30:52 -0800
+Processing by UsersController#information as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17
+  Rendering users/information.html.erb within layouts/application
+  Rendered shared/_header_banner.html.erb (0.9ms)
+  Rendered shared/_how_it_works.html.erb (0.5ms)
+  Rendered shared/_how_it_works.html.erb (0.0ms)
+  Rendered users/information.html.erb within layouts/application (9.7ms)
+Completed 200 OK in 98ms (Views: 91.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/signup/information" for 127.0.0.1 at 2018-12-23 19:31:19 -0800
+Processing by UsersController#information as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17
+  Rendering users/information.html.erb within layouts/application
+  Rendered shared/_header_banner.html.erb (0.7ms)
+  Rendered shared/_how_it_works.html.erb (0.4ms)
+  Rendered shared/_how_it_works.html.erb (0.0ms)
+  Rendered users/information.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 101ms (Views: 96.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/signup/information" for 127.0.0.1 at 2018-12-23 19:31:49 -0800
+Processing by UsersController#information as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17
+  Rendering users/information.html.erb within layouts/application
+  Rendered shared/_header_banner.html.erb (1.5ms)
+  Rendered shared/_how_it_works.html.erb (0.5ms)
+  Rendered shared/_how_it_works.html.erb (0.1ms)
+  Rendered users/information.html.erb within layouts/application (14.3ms)
+Completed 200 OK in 126ms (Views: 121.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/signup/information" for 127.0.0.1 at 2018-12-23 19:31:55 -0800
+Processing by UsersController#information as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17
+  Rendering users/information.html.erb within layouts/application
+  Rendered shared/_header_banner.html.erb (0.8ms)
+  Rendered shared/_how_it_works.html.erb (0.5ms)
+  Rendered shared/_how_it_works.html.erb (0.1ms)
+  Rendered users/information.html.erb within layouts/application (9.7ms)
+Completed 200 OK in 44ms (Views: 38.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/signup/information" for 127.0.0.1 at 2018-12-23 19:32:30 -0800
+Processing by UsersController#information as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17
+  Rendering users/information.html.erb within layouts/application
+  Rendered shared/_header_banner.html.erb (1.3ms)
+  Rendered shared/_how_it_works.html.erb (0.8ms)
+  Rendered shared/_how_it_works.html.erb (0.1ms)
+  Rendered users/information.html.erb within layouts/application (14.7ms)
+Completed 200 OK in 120ms (Views: 115.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/signup/information" for 127.0.0.1 at 2018-12-23 19:32:42 -0800
+Processing by UsersController#information as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17
+  Rendering users/information.html.erb within layouts/application
+  Rendered shared/_header_banner.html.erb (0.7ms)
+  Rendered shared/_how_it_works.html.erb (0.3ms)
+  Rendered shared/_how_it_works.html.erb (0.1ms)
+  Rendered users/information.html.erb within layouts/application (9.0ms)
+Completed 200 OK in 103ms (Views: 99.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/signup/information" for 127.0.0.1 at 2018-12-23 19:34:00 -0800
+Processing by UsersController#information as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17
+  Rendering users/information.html.erb within layouts/application
+  Rendered shared/_header_banner.html.erb (0.6ms)
+  Rendered shared/_how_it_works.html.erb (0.6ms)
+  Rendered shared/_how_it_works.html.erb (0.2ms)
+  Rendered users/information.html.erb within layouts/application (8.9ms)
+Completed 200 OK in 90ms (Views: 86.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/signup/information" for 127.0.0.1 at 2018-12-23 19:34:22 -0800
+Processing by UsersController#information as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17
+  Rendering users/information.html.erb within layouts/application
+  Rendered shared/_header_banner.html.erb (0.9ms)
+  Rendered shared/_how_it_works.html.erb (0.4ms)
+  Rendered shared/_how_it_works.html.erb (0.0ms)
+  Rendered users/information.html.erb within layouts/application (8.4ms)
+Completed 200 OK in 97ms (Views: 93.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/signup/information" for 127.0.0.1 at 2018-12-23 19:34:59 -0800
+Processing by UsersController#information as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17
+  Rendering users/information.html.erb within layouts/application
+  Rendered shared/_header_banner.html.erb (1.2ms)
+  Rendered shared/_how_it_works.html.erb (0.7ms)
+  Rendered shared/_how_it_works.html.erb (0.0ms)
+  Rendered users/information.html.erb within layouts/application (11.1ms)
+Completed 200 OK in 161ms (Views: 155.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/signup/information" for 127.0.0.1 at 2018-12-23 19:35:41 -0800
+Processing by UsersController#information as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17
+  Rendering users/information.html.erb within layouts/application
+  Rendered shared/_header_banner.html.erb (0.8ms)
+  Rendered shared/_how_it_works.html.erb (0.7ms)
+  Rendered users/information.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 40ms (Views: 34.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/signup/information" for 127.0.0.1 at 2018-12-23 19:36:30 -0800
+Processing by UsersController#information as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17
+  Rendering users/information.html.erb within layouts/application
+  Rendered shared/_header_banner.html.erb (0.9ms)
+  Rendered shared/_how_it_works.html.erb (0.3ms)
+  Rendered users/information.html.erb within layouts/application (7.6ms)
+Completed 200 OK in 48ms (Views: 43.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/signup/information" for 127.0.0.1 at 2018-12-23 19:41:51 -0800
+Processing by UsersController#information as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17
+  Rendering users/information.html.erb within layouts/application
+  Rendered shared/_header_banner.html.erb (0.8ms)
+  Rendered shared/_how_it_works.html.erb (0.8ms)
+  Rendered users/information.html.erb within layouts/application (8.8ms)
+Completed 200 OK in 115ms (Views: 110.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/signup/information" for 127.0.0.1 at 2018-12-23 19:42:16 -0800
+Processing by UsersController#information as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17
+  Rendering users/information.html.erb within layouts/application
+  Rendered shared/_header_banner.html.erb (1.2ms)
+  Rendered shared/_how_it_works.html.erb (0.3ms)
+  Rendered users/information.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 115ms (Views: 108.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/signup/information" for 127.0.0.1 at 2018-12-23 19:42:39 -0800
+Processing by UsersController#information as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17
+  Rendering users/information.html.erb within layouts/application
+  Rendered shared/_header_banner.html.erb (0.9ms)
+  Rendered shared/_how_it_works.html.erb (0.5ms)
+  Rendered users/information.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 115ms (Views: 110.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/signup/information" for 127.0.0.1 at 2018-12-23 19:43:21 -0800
+Processing by UsersController#information as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17
+  Rendering users/information.html.erb within layouts/application
+  Rendered shared/_header_banner.html.erb (0.7ms)
+  Rendered shared/_how_it_works.html.erb (0.5ms)
+  Rendered users/information.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 95ms (Views: 89.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/signup/information" for 127.0.0.1 at 2018-12-23 19:43:34 -0800
+Processing by UsersController#information as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17
+  Rendering users/information.html.erb within layouts/application
+  Rendered shared/_header_banner.html.erb (1.0ms)
+  Rendered shared/_how_it_works.html.erb (0.7ms)
+  Rendered users/information.html.erb within layouts/application (7.3ms)
+Completed 200 OK in 102ms (Views: 97.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/signup/information" for 127.0.0.1 at 2018-12-23 19:44:11 -0800
+Processing by UsersController#information as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17
+  Rendering users/information.html.erb within layouts/application
+  Rendered shared/_header_banner.html.erb (0.9ms)
+  Rendered shared/_how_it_works.html.erb (0.3ms)
+  Rendered users/information.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 37ms (Views: 34.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/signup/information" for 127.0.0.1 at 2018-12-23 19:46:11 -0800
+Processing by UsersController#information as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17
+  Rendering users/information.html.erb within layouts/application
+  Rendered shared/_header_banner.html.erb (1.0ms)
+  Rendered shared/_how_it_works.html.erb (0.5ms)
+  Rendered users/information.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 95ms (Views: 90.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/signup/information" for 127.0.0.1 at 2018-12-23 19:46:26 -0800
+Processing by UsersController#information as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17
+  Rendering users/information.html.erb within layouts/application
+  Rendered shared/_header_banner.html.erb (0.7ms)
+  Rendered shared/_how_it_works.html.erb (0.3ms)
+  Rendered users/information.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 103ms (Views: 98.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/signup/information" for 127.0.0.1 at 2018-12-23 19:46:55 -0800
+Processing by UsersController#information as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17
+  Rendering users/information.html.erb within layouts/application
+  Rendered shared/_header_banner.html.erb (0.9ms)
+  Rendered shared/_how_it_works.html.erb (0.5ms)
+  Rendered users/information.html.erb within layouts/application (7.3ms)
+Completed 200 OK in 103ms (Views: 99.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/signup/information" for 127.0.0.1 at 2018-12-23 19:47:13 -0800
+Processing by UsersController#information as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17
+  Rendering users/information.html.erb within layouts/application
+  Rendered shared/_header_banner.html.erb (1.1ms)
+  Rendered shared/_how_it_works.html.erb (0.5ms)
+  Rendered users/information.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 104ms (Views: 100.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/signup/information" for 127.0.0.1 at 2018-12-23 19:47:49 -0800
+Processing by UsersController#information as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17
+  Rendering users/information.html.erb within layouts/application
+  Rendered shared/_header_banner.html.erb (0.6ms)
+  Rendered shared/_how_it_works.html.erb (0.6ms)
+  Rendered users/information.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 1417ms (Views: 1413.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/signup/information" for 127.0.0.1 at 2018-12-23 19:54:04 -0800
+Processing by UsersController#information as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17
+  Rendering users/information.html.erb within layouts/application
+  Rendered shared/_header_banner.html.erb (1.3ms)
+  Rendered shared/_how_it_works.html.erb (0.6ms)
+  Rendered users/information.html.erb within layouts/application (10.9ms)
+Completed 200 OK in 58ms (Views: 53.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/signup/information" for 127.0.0.1 at 2018-12-23 19:54:33 -0800
+Processing by UsersController#information as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17
+  Rendering users/information.html.erb within layouts/application
+  Rendered shared/_header_banner.html.erb (1.2ms)
+  Rendered shared/_how_it_works.html.erb (0.7ms)
+  Rendered users/information.html.erb within layouts/application (9.2ms)
+Completed 200 OK in 52ms (Views: 46.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/signup/information" for 127.0.0.1 at 2018-12-23 20:08:03 -0800
+Processing by UsersController#information as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17
+  Rendering users/information.html.erb within layouts/application
+  Rendered shared/_header_banner.html.erb (1.0ms)
+  Rendered shared/_how_it_works.html.erb (0.7ms)
+  Rendered users/information.html.erb within layouts/application (10.6ms)
+Completed 200 OK in 117ms (Views: 112.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/signup/information" for 127.0.0.1 at 2018-12-23 20:08:45 -0800
+Processing by UsersController#information as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17
+  Rendering users/information.html.erb within layouts/application
+  Rendered shared/_header_banner.html.erb (1.7ms)
+  Rendered shared/_how_it_works.html.erb (0.6ms)
+  Rendered users/information.html.erb within layouts/application (9.0ms)
+Completed 200 OK in 58ms (Views: 51.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/signup/information" for 127.0.0.1 at 2018-12-23 20:10:04 -0800
+Processing by UsersController#information as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17
+  Rendering users/information.html.erb within layouts/application
+  Rendered shared/_header_banner.html.erb (0.9ms)
+  Rendered shared/_how_it_works.html.erb (1.0ms)
+  Rendered users/information.html.erb within layouts/application (8.6ms)
+Completed 200 OK in 140ms (Views: 132.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/signup/information" for 127.0.0.1 at 2018-12-23 20:17:58 -0800
+Processing by UsersController#information as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17
+  Rendering users/information.html.erb within layouts/application
+  Rendered shared/_header_banner.html.erb (1.1ms)
+  Rendered shared/_how_it_works.html.erb (2.2ms)
+  Rendered users/information.html.erb within layouts/application (11.3ms)
+Completed 200 OK in 131ms (Views: 126.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/signup/information" for 127.0.0.1 at 2018-12-23 20:18:23 -0800
+Processing by UsersController#information as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17
+  Rendering users/information.html.erb within layouts/application
+  Rendered shared/_header_banner.html.erb (0.9ms)
+  Rendered shared/_how_it_works.html.erb (0.5ms)
+  Rendered users/information.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 96ms (Views: 92.4ms | ActiveRecord: 0.2ms)
+
+
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/daniel/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+Migrating to AddInfoFieldsToUsers (20181224042039)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/daniel/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[35m (0.9ms)[0m  [1m[35mALTER TABLE "users" ADD "services" varchar[0m
+  ↳ db/migrate/20181224042039_add_info_fields_to_users.rb:3
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "users" ADD "rss" varchar[0m
+  ↳ db/migrate/20181224042039_add_info_fields_to_users.rb:4
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "users" ADD "details" varchar[0m
+  ↳ db/migrate/20181224042039_add_info_fields_to_users.rb:5
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181224042039"]]
+  ↳ /Users/daniel/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/daniel/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/daniel/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/daniel/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/daniel/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/daniel/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+Started GET "/signup/information" for 127.0.0.1 at 2018-12-23 20:36:58 -0800
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/daniel/.rvm/gems/ruby-2.5.1/gems/web-console-3.7.0/lib/web_console/middleware.rb:135
+Processing by UsersController#information as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17
+  Rendering users/information.html.erb within layouts/application
+  Rendered shared/_header_banner.html.erb (1.9ms)
+  Rendered shared/_how_it_works.html.erb (0.5ms)
+  Rendered users/information.html.erb within layouts/application (9.6ms)
+Completed 200 OK in 675ms (Views: 625.0ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/users/information" for 127.0.0.1 at 2018-12-23 20:37:05 -0800
+Processing by UsersController#save_information as */*
+  Parameters: {"selected"=>"edit, other", "rss"=>"rss", "details"=>"asd"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17
+Unpermitted parameter: :selected
+Unpermitted parameter: :selected
+Unpermitted parameter: :selected
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.3ms)
+
+
+  
+NoMethodError (undefined method `save' for nil:NilClass):
+  
+app/controllers/users_controller.rb:27:in `save_information'
+Started GET "/signup/information" for 127.0.0.1 at 2018-12-23 20:37:20 -0800
+Processing by UsersController#information as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17
+  Rendering users/information.html.erb within layouts/application
+  Rendered shared/_header_banner.html.erb (1.3ms)
+  Rendered shared/_how_it_works.html.erb (0.5ms)
+  Rendered users/information.html.erb within layouts/application (9.3ms)
+Completed 200 OK in 75ms (Views: 42.4ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/users/information" for 127.0.0.1 at 2018-12-23 20:37:26 -0800
+Processing by UsersController#save_information as */*
+  Parameters: {"selected"=>"edit, setup, other", "rss"=>"rss", "details"=>"ase"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17
+Unpermitted parameter: :selected
+Unpermitted parameter: :selected
+Unpermitted parameter: :selected
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:27
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? AND "users"."id" != ? LIMIT ?[0m  [["email", "asdfdgdfg@xcxv.com"], ["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:27
+  [1m[36mUser Update (0.5ms)[0m  [1m[33mUPDATE "users" SET "details" = ?, "rss" = ?, "waitlisted" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["details", "ase"], ["rss", "rss"], ["waitlisted", 1], ["updated_at", "2018-12-24 04:37:26.487738"], ["id", 16]]
+  ↳ app/controllers/users_controller.rb:27
+  [1m[35m (3.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:27
+Completed 200 OK in 13ms (Views: 0.3ms | ActiveRecord: 4.2ms)
+
+
+Started GET "/signup/information" for 127.0.0.1 at 2018-12-23 20:39:05 -0800
+Processing by UsersController#information as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17
+  Rendering users/information.html.erb within layouts/application
+  Rendered shared/_header_banner.html.erb (1.1ms)
+  Rendered shared/_how_it_works.html.erb (0.4ms)
+  Rendered users/information.html.erb within layouts/application (8.5ms)
+Completed 200 OK in 201ms (Views: 162.3ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/users/information" for 127.0.0.1 at 2018-12-23 20:39:10 -0800
+Processing by UsersController#save_information as */*
+  Parameters: {"selected"=>"edit, setup, other", "rss"=>"asdsa", "details"=>"asdas"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17
+Unpermitted parameter: :selected
+Unpermitted parameter: :selected
+Unpermitted parameter: :selected
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:27
+  [1m[36mUser Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? AND "users"."id" != ? LIMIT ?[0m  [["email", "asdfdgdfg@xcxv.com"], ["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:27
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE "users" SET "details" = ?, "rss" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["details", "asdas"], ["rss", "asdsa"], ["updated_at", "2018-12-24 04:39:10.145617"], ["id", 16]]
+  ↳ app/controllers/users_controller.rb:27
+  [1m[35m (9.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:27
+Completed 200 OK in 20ms (Views: 0.4ms | ActiveRecord: 10.3ms)
+
+
+Started GET "/users/waitlisted" for 127.0.0.1 at 2018-12-23 20:39:10 -0800
+  
+AbstractController::ActionNotFound (The action 'show' could not be found for UsersController):
+  
+actionpack (5.2.1.1) lib/abstract_controller/base.rb:129:in `process'
+actionview (5.2.1.1) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.1.1) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.1.1) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.1.1) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.1.1) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.1.1) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.1.1) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.1.1) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.1.1) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.6) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.6) lib/rack/etag.rb:25:in `call'
+rack (2.0.6) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.6) lib/rack/head.rb:12:in `call'
+actionpack (5.2.1.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.6) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.6) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.1.1) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.1.1) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.1.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.1.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.1.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.1.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/users/waitlisted" for 127.0.0.1 at 2018-12-23 20:39:50 -0800
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/daniel/.rvm/gems/ruby-2.5.1/gems/web-console-3.7.0/lib/web_console/middleware.rb:135
+  
+AbstractController::ActionNotFound (The action 'show' could not be found for UsersController):
+  
+actionpack (5.2.1.1) lib/abstract_controller/base.rb:129:in `process'
+actionview (5.2.1.1) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.1.1) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.1.1) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.1.1) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.1.1) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.1.1) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.1.1) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.1.1) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.1.1) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.6) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.6) lib/rack/etag.rb:25:in `call'
+rack (2.0.6) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.6) lib/rack/head.rb:12:in `call'
+actionpack (5.2.1.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.6) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.6) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.1.1) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.1.1) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.1.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.1.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.1.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.1.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/users/waitlisted" for 127.0.0.1 at 2018-12-23 20:40:07 -0800
+  
+AbstractController::ActionNotFound (The action 'show' could not be found for UsersController):
+  
+actionpack (5.2.1.1) lib/abstract_controller/base.rb:129:in `process'
+actionview (5.2.1.1) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.1.1) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.1.1) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.1.1) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.1.1) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.1.1) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.1.1) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.1.1) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.1.1) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.6) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.6) lib/rack/etag.rb:25:in `call'
+rack (2.0.6) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.6) lib/rack/head.rb:12:in `call'
+actionpack (5.2.1.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.6) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.6) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.1.1) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.1.1) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.1.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.1.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.1.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.1.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/users/waitlisted" for 127.0.0.1 at 2018-12-23 20:40:35 -0800
+  
+AbstractController::ActionNotFound (The action 'show' could not be found for UsersController):
+  
+actionpack (5.2.1.1) lib/abstract_controller/base.rb:129:in `process'
+actionview (5.2.1.1) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.1.1) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.1.1) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.1.1) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.1.1) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.1.1) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.1.1) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.1.1) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.1.1) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.6) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.6) lib/rack/etag.rb:25:in `call'
+rack (2.0.6) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.6) lib/rack/head.rb:12:in `call'
+actionpack (5.2.1.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.6) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.6) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.1.1) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.1.1) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.1.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.1.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.1.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.1.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/users/waitlisted" for 127.0.0.1 at 2018-12-23 20:41:36 -0800
+  
+AbstractController::ActionNotFound (The action 'show' could not be found for UsersController):
+  
+actionpack (5.2.1.1) lib/abstract_controller/base.rb:129:in `process'
+actionview (5.2.1.1) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.1.1) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.1.1) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.1.1) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.1.1) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.1.1) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.1.1) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.1.1) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.1.1) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.6) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.6) lib/rack/etag.rb:25:in `call'
+rack (2.0.6) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.6) lib/rack/head.rb:12:in `call'
+actionpack (5.2.1.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.6) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.6) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.1.1) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.1.1) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.1.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.1.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.1.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.1.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/users/waitlisted" for 127.0.0.1 at 2018-12-23 20:41:38 -0800
+  
+AbstractController::ActionNotFound (The action 'show' could not be found for UsersController):
+  
+actionpack (5.2.1.1) lib/abstract_controller/base.rb:129:in `process'
+actionview (5.2.1.1) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.1.1) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.1.1) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.1.1) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.1.1) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.1.1) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.1.1) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.1.1) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.1.1) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.6) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.6) lib/rack/etag.rb:25:in `call'
+rack (2.0.6) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.6) lib/rack/head.rb:12:in `call'
+actionpack (5.2.1.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.6) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.6) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.1.1) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.1.1) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.1.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.1.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.1.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.1.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/users/waitlisted" for 127.0.0.1 at 2018-12-23 20:41:54 -0800
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/daniel/.rvm/gems/ruby-2.5.1/gems/web-console-3.7.0/lib/web_console/middleware.rb:135
+  
+AbstractController::ActionNotFound (The action 'show' could not be found for UsersController):
+  
+actionpack (5.2.1.1) lib/abstract_controller/base.rb:129:in `process'
+actionview (5.2.1.1) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.1.1) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.1.1) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.1.1) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.1.1) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.1.1) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.1.1) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.1.1) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.1.1) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.6) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.6) lib/rack/etag.rb:25:in `call'
+rack (2.0.6) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.6) lib/rack/head.rb:12:in `call'
+actionpack (5.2.1.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.6) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.6) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.1.1) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.1.1) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.1.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.1.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.1.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.1.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/users/waitlisted" for 127.0.0.1 at 2018-12-23 20:41:58 -0800
+  
+AbstractController::ActionNotFound (The action 'show' could not be found for UsersController):
+  
+actionpack (5.2.1.1) lib/abstract_controller/base.rb:129:in `process'
+actionview (5.2.1.1) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.1.1) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.1.1) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.1.1) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.1.1) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.1.1) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.1.1) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.1.1) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.1.1) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.6) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.6) lib/rack/etag.rb:25:in `call'
+rack (2.0.6) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.6) lib/rack/head.rb:12:in `call'
+actionpack (5.2.1.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.6) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.6) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.1.1) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.1.1) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.1.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.1.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.1.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.1.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/user/waitlisted" for 127.0.0.1 at 2018-12-23 20:42:04 -0800
+  
+ActionController::RoutingError (No route matches [GET] "/user/waitlisted"):
+  
+actionpack (5.2.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/waitlisted" for 127.0.0.1 at 2018-12-23 20:42:13 -0800
+  
+ActionController::RoutingError (No route matches [GET] "/waitlisted"):
+  
+actionpack (5.2.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/waitlisted" for 127.0.0.1 at 2018-12-23 20:42:33 -0800
+Processing by UsersController#waitlisted as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17
+  Rendering users/waitlisted.html.erb within layouts/application
+  Rendered shared/_header_banner.html.erb (1.2ms)
+  Rendered users/waitlisted.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 524ms (Views: 484.2ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/logout" for 127.0.0.1 at 2018-12-23 20:42:42 -0800
+Processing by MainController#logout as HTML
+Redirected to http://localhost:3000/login
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2018-12-23 20:42:42 -0800
+Processing by MainController#login as HTML
+  Rendering main/login.html.erb within layouts/application
+  Rendered shared/_header_banner.html.erb (1.0ms)
+  Rendered main/login.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 49ms (Views: 40.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-23 20:42:44 -0800
+Processing by MainController#index as HTML
+  Rendering main/index.html.erb within layouts/application
+  Rendered shared/_header_banner.html.erb (2.1ms)
+  Rendered shared/_how_it_works.html.erb (1.0ms)
+  Rendered shared/_footer.html.erb (0.5ms)
+  Rendered main/index.html.erb within layouts/application (18.1ms)
+Completed 200 OK in 57ms (Views: 54.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2018-12-23 20:42:45 -0800
+Processing by MainController#signup as HTML
+  Rendering main/signup.html.erb within layouts/application
+  Rendered shared/_header_banner.html.erb (1.2ms)
+  Rendered main/signup.html.erb within layouts/application (9.1ms)
+Completed 200 OK in 55ms (Views: 51.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-12-23 20:42:56 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"kh5m8mA/vVtjK+GST0k9ITQewI7irdDjUR1QtxkaRmGByk8yZw+lm523sHfx/G67dtaDtT90pJxTbsCsk14PYg==", "first_name"=>"Daniel", "last_name"=>"Test", "email"=>"test@test.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "commit"=>"Create Account"}
+Unpermitted parameters: :utf8, :authenticity_token, :commit
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:7
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "test@test.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:7
+Redirected to http://localhost:3000/signup
+Completed 302 Found in 11ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2018-12-23 20:42:56 -0800
+Processing by MainController#signup as HTML
+  Rendering main/signup.html.erb within layouts/application
+  Rendered shared/_header_banner.html.erb (0.8ms)
+  Rendered main/signup.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 35ms (Views: 31.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-12-23 20:43:04 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7DdxFspeD6O6XMYCHU9SEbC94g+/CFbCDhJM5Hl+F5f/41jWzW4XY0TAl+ej+gGL8nWhNGLRIr0MYdz/8zpelA==", "first_name"=>"Daniel", "last_name"=>"Test", "email"=>"test@test.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "commit"=>"Create Account"}
+Unpermitted parameters: :utf8, :authenticity_token, :commit
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:7
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "test@test.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7
+  [1m[36mUser Create (1.0ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "encrypted_password", "salt", "created_at", "updated_at", "admin", "waitlisted", "approved", "user_type") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Daniel"], ["last_name", "Test"], ["email", "test@test.com"], ["encrypted_password", "$2a$10$ZlibVfJhR0uQ2.MjrNqKtuHpdB8O1PB4/CZL0WILvZX8nXHKUv/Hu"], ["salt", "$2a$10$ZlibVfJhR0uQ2.MjrNqKtu"], ["created_at", "2018-12-24 04:43:04.901747"], ["updated_at", "2018-12-24 04:43:04.901747"], ["admin", 0], ["waitlisted", 1], ["approved", 0], ["user_type", "business"]]
+  ↳ app/controllers/users_controller.rb:7
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:7
+Redirected to http://localhost:3000/signup/information
+Completed 302 Found in 89ms (ActiveRecord: 2.2ms)
+
+
+Started GET "/signup/information" for 127.0.0.1 at 2018-12-23 20:43:04 -0800
+Processing by UsersController#information as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17
+  Rendering users/information.html.erb within layouts/application
+  Rendered shared/_header_banner.html.erb (0.7ms)
+  Rendered shared/_how_it_works.html.erb (0.4ms)
+  Rendered users/information.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 38ms (Views: 34.8ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/users/information" for 127.0.0.1 at 2018-12-23 20:43:10 -0800
+Processing by UsersController#save_information as */*
+  Parameters: {"selected"=>"edit, setup, other", "rss"=>"asd", "details"=>"asd"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17
+Unpermitted parameter: :selected
+Unpermitted parameter: :selected
+Unpermitted parameter: :selected
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:27
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? AND "users"."id" != ? LIMIT ?[0m  [["email", "test@test.com"], ["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:27
+  [1m[36mUser Update (0.5ms)[0m  [1m[33mUPDATE "users" SET "details" = ?, "rss" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["details", "asd"], ["rss", "asd"], ["updated_at", "2018-12-24 04:43:10.110061"], ["id", 17]]
+  ↳ app/controllers/users_controller.rb:27
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:27
+Completed 200 OK in 11ms (Views: 0.2ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/waitlisted" for 127.0.0.1 at 2018-12-23 20:43:10 -0800
+Processing by UsersController#waitlisted as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17
+  Rendering users/waitlisted.html.erb within layouts/application
+  Rendered shared/_header_banner.html.erb (1.4ms)
+  Rendered users/waitlisted.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 59ms (Views: 51.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/logout" for 127.0.0.1 at 2018-12-23 20:43:12 -0800
+Processing by MainController#logout as HTML
+Redirected to http://localhost:3000/login
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2018-12-23 20:43:12 -0800
+Processing by MainController#login as HTML
+  Rendering main/login.html.erb within layouts/application
+  Rendered shared/_header_banner.html.erb (1.1ms)
+  Rendered main/login.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 40ms (Views: 36.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2018-12-23 20:43:14 -0800
+Processing by MainController#login_attempt as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hBZvZzAWfQSRz0LshkjHI3a4AWfJyorLs+9AGp27TspflQBun+M9li4YJnt5WlWMFBcUsXK7iIEijKuHVeXv2g==", "email"=>"test@test.com", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "test@test.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:20
+Redirected to http://localhost:3000/users/waitlisted
+Completed 302 Found in 74ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/users/waitlisted" for 127.0.0.1 at 2018-12-23 20:43:14 -0800
+  
+AbstractController::ActionNotFound (The action 'show' could not be found for UsersController):
+  
+actionpack (5.2.1.1) lib/abstract_controller/base.rb:129:in `process'
+actionview (5.2.1.1) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.1.1) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.1.1) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.1.1) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.1.1) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.1.1) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.1.1) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.1.1) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.1.1) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.6) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.6) lib/rack/etag.rb:25:in `call'
+rack (2.0.6) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.6) lib/rack/head.rb:12:in `call'
+actionpack (5.2.1.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.6) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.6) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.1.1) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.1.1) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.1.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.1.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.1.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.1.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1.1) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.1.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.1.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.1.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.1.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.1.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.1.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.1.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.1.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.1.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.1.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.1.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.1.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.1.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/waitlisted" for 127.0.0.1 at 2018-12-23 20:43:32 -0800
+Processing by UsersController#waitlisted as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17
+  Rendering users/waitlisted.html.erb within layouts/application
+  Rendered shared/_header_banner.html.erb (0.6ms)
+  Rendered users/waitlisted.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 52ms (Views: 30.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/waitlisted" for 127.0.0.1 at 2018-12-23 20:44:45 -0800
+Processing by UsersController#waitlisted as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17
+  Rendering users/waitlisted.html.erb within layouts/application
+  Rendered shared/_header_banner.html.erb (1.2ms)
+  Rendered users/waitlisted.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 90ms (Views: 58.1ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/logout" for 127.0.0.1 at 2018-12-23 20:44:53 -0800
+Processing by MainController#logout as HTML
+Redirected to http://localhost:3000/login
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2018-12-23 20:44:53 -0800
+Processing by MainController#login as HTML
+  Rendering main/login.html.erb within layouts/application
+  Rendered shared/_header_banner.html.erb (1.2ms)
+  Rendered main/login.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 46ms (Views: 40.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2018-12-23 20:44:57 -0800
+Processing by MainController#login_attempt as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qjX1rqUu8MTwMLDYa1jFmO+O8uP4pAvIfs7dBIr8715xtpqnCtuwVk/n1E+USlc3jSHnNUPVCYLvrTaZQqJOTg==", "email"=>"test@test.com", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "test@test.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:20
+{"id":17,"first_name":"Daniel","last_name":"Test","email":"test@test.com","encrypted_password":"$2a$10$ZlibVfJhR0uQ2.MjrNqKtuHpdB8O1PB4/CZL0WILvZX8nXHKUv/Hu","salt":"$2a$10$ZlibVfJhR0uQ2.MjrNqKtu","created_at":"2018-12-24T04:43:04.901Z","updated_at":"2018-12-24T04:43:10.110Z","admin":false,"waitlisted":true,"approved":false,"user_type":"business","editing_description":null,"previous_work":null,"services":null,"rss":"asd","details":"asd"}
+Redirected to http://localhost:3000/waitlisted
+Completed 302 Found in 77ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/waitlisted" for 127.0.0.1 at 2018-12-23 20:44:57 -0800
+Processing by UsersController#waitlisted as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17
+  Rendering users/waitlisted.html.erb within layouts/application
+  Rendered shared/_header_banner.html.erb (0.7ms)
+  Rendered users/waitlisted.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 33ms (Views: 29.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/logout" for 127.0.0.1 at 2018-12-23 20:45:30 -0800
+Processing by MainController#logout as HTML
+Redirected to http://localhost:3000/login
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2018-12-23 20:45:30 -0800
+Processing by MainController#login as HTML
+  Rendering main/login.html.erb within layouts/application
+  Rendered shared/_header_banner.html.erb (0.7ms)
+  Rendered main/login.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 107ms (Views: 102.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2018-12-23 20:45:30 -0800
+Processing by MainController#login as HTML
+  Rendering main/login.html.erb within layouts/application
+  Rendered shared/_header_banner.html.erb (0.9ms)
+  Rendered main/login.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 67ms (Views: 56.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-23 20:45:32 -0800
+Processing by MainController#index as HTML
+  Rendering main/index.html.erb within layouts/application
+  Rendered shared/_header_banner.html.erb (1.5ms)
+  Rendered shared/_how_it_works.html.erb (0.8ms)
+  Rendered shared/_footer.html.erb (0.7ms)
+  Rendered main/index.html.erb within layouts/application (22.6ms)
+Completed 200 OK in 61ms (Views: 58.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2018-12-23 20:45:33 -0800
+Processing by MainController#signup as HTML
+  Rendering main/signup.html.erb within layouts/application
+  Rendered shared/_header_banner.html.erb (0.7ms)
+  Rendered main/signup.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 53ms (Views: 40.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2018-12-23 20:45:41 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GKHXHC2Oushbdx2OtqFQ7qX2cG/6QIp9JqDh7Zb1booLdf7cKr6iCKXrTGsIFAN05z4zVCeZ/gIk03H2HLEniQ==", "first_name"=>"da", "last_name"=>"niel", "email"=>"test2@test.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "commit"=>"Create Account"}
+Unpermitted parameters: :utf8, :authenticity_token, :commit
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:7
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "test2@test.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "encrypted_password", "salt", "created_at", "updated_at", "admin", "waitlisted", "approved", "user_type") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "da"], ["last_name", "niel"], ["email", "test2@test.com"], ["encrypted_password", "$2a$10$O15pBzvsYSOgY6aM6W4kBeoidRcaZ6Q9tCfH/9o5FwnQLfZ1OkrrK"], ["salt", "$2a$10$O15pBzvsYSOgY6aM6W4kBe"], ["created_at", "2018-12-24 04:45:41.450705"], ["updated_at", "2018-12-24 04:45:41.450705"], ["admin", 0], ["waitlisted", 1], ["approved", 0], ["user_type", "business"]]
+  ↳ app/controllers/users_controller.rb:7
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:7
+Redirected to http://localhost:3000/signup/information
+Completed 302 Found in 82ms (ActiveRecord: 1.7ms)
+
+
+Started GET "/signup/information" for 127.0.0.1 at 2018-12-23 20:45:41 -0800
+Processing by UsersController#information as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17
+  Rendering users/information.html.erb within layouts/application
+  Rendered shared/_header_banner.html.erb (1.1ms)
+  Rendered shared/_how_it_works.html.erb (0.4ms)
+  Rendered users/information.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 33ms (Views: 29.1ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/users/information" for 127.0.0.1 at 2018-12-23 20:45:46 -0800
+Processing by UsersController#save_information as */*
+  Parameters: {"services"=>"setup, edit, distribute, other", "rss"=>"dsa", "details"=>"asd"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:27
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? AND "users"."id" != ? LIMIT ?[0m  [["email", "test2@test.com"], ["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:27
+  [1m[36mUser Update (0.4ms)[0m  [1m[33mUPDATE "users" SET "services" = ?, "details" = ?, "rss" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["services", "setup, edit, distribute, other"], ["details", "asd"], ["rss", "dsa"], ["updated_at", "2018-12-24 04:45:46.700093"], ["id", 18]]
+  ↳ app/controllers/users_controller.rb:27
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:27
+Completed 200 OK in 11ms (Views: 0.3ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/waitlisted" for 127.0.0.1 at 2018-12-23 20:45:46 -0800
+Processing by UsersController#waitlisted as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:17
+  Rendering users/waitlisted.html.erb within layouts/application
+  Rendered shared/_header_banner.html.erb (1.4ms)
+  Rendered users/waitlisted.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 48ms (Views: 38.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/logout" for 127.0.0.1 at 2018-12-23 20:45:59 -0800
+Processing by MainController#logout as HTML
+Redirected to http://localhost:3000/login
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2018-12-23 20:45:59 -0800
+Processing by MainController#login as HTML
+  Rendering main/login.html.erb within layouts/application
+  Rendered shared/_header_banner.html.erb (0.8ms)
+  Rendered main/login.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 37ms (Views: 32.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2018-12-23 20:46:03 -0800
+Processing by MainController#login_attempt as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mFiFULC0VPvQNN7yYgiMOn5NcMdZz2XLUdSFWA9HGEND2+pZH0EUaW/jumWdGh6VHOJlEeK+Z4HAt27Fxxm5Uw==", "email"=>"test2@test.com", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "test2@test.com"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:20
+{"id":18,"first_name":"da","last_name":"niel","email":"test2@test.com","encrypted_password":"$2a$10$O15pBzvsYSOgY6aM6W4kBeoidRcaZ6Q9tCfH/9o5FwnQLfZ1OkrrK","salt":"$2a$10$O15pBzvsYSOgY6aM6W4kBe","created_at":"2018-12-24T04:45:41.450Z","updated_at":"2018-12-24T04:45:46.700Z","admin":false,"waitlisted":true,"approved":false,"user_type":"business","editing_description":null,"previous_work":null,"services":"setup, edit, distribute, other","rss":"dsa","details":"asd"}
+Redirected to http://localhost:3000/
+Completed 302 Found in 76ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-23 20:46:04 -0800
+Processing by MainController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4
+  Rendering main/index.html.erb within layouts/application
+  Rendered shared/_header_banner.html.erb (0.8ms)
+  Rendered shared/_how_it_works.html.erb (0.4ms)
+  Rendered shared/_footer.html.erb (0.4ms)
+  Rendered main/index.html.erb within layouts/application (9.7ms)
+Completed 200 OK in 38ms (Views: 34.6ms | ActiveRecord: 0.2ms)
+
+

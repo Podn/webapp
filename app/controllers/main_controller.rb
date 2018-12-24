@@ -18,11 +18,14 @@ class MainController < ApplicationController
         authorized_user = User.authenticate(params[:email],params[:password])
         if authorized_user
             session[:user_id] = authorized_user.id
-            logger.warn authorized_user.to_json
             if authorized_user.user_type == "editor"
                 redirect_to('/editor/review')
             else
-                redirect_to(:action => 'index')
+                if !authorized_user.services.present? and authorized_user.waitlisted
+                    redirect_to('/waitlisted')
+                else
+                    redirect_to(:action => 'index')
+                end
             end
         else
             flash[:notice] = "Invalid Username or Password"

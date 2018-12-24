@@ -9,21 +9,22 @@
     </div>
     <div class="information-page" style="display: none;">
         <div class="information-titles">
-           <h1>SECOND PAGE</h1>
-           <h2>Another page for the making</h2>
+           <h1>Tell us a bit about your project</h1>
+           <h5>Already have a podcast? Let us know your RSS! Don't have a podcast set-up? No problem!</h5>
+           <input id="rss" type="text" class="mdl-textfield__input" placeholder="RSS Feed (optional)"/>
+           <h5>Tell us a bit around what you're looking for</h5>
+           <textarea id="details" class="mdl-textfield__input" placeholder="Tell us how we can help you with your podcast!"></textarea>
         </div>
-        <%= render "shared/how_it_works", selectable: true %>
     </div>
     <div class="imformation-button-row">
         <button 
-            style="display: none;"
             id="information-back"
-            class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored disabled">
+            class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored" disabled onclick="informationState(false)">
           <div>Back</div>
         </button>
         <button 
             id="information-forward"
-            class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored disabled">
+            class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored" disabled onclick="informationState(true)">
           <div>Continue</div>
         </button>
     </div>

@@ -30,7 +30,7 @@ class User < ActiveRecord::Base
 
     def update_before_save        
         if not self.waitlisted.present?
-            self.waitlisted = false
+            self.waitlisted = true
         end
         if not self.admin.present?
             self.admin = false
